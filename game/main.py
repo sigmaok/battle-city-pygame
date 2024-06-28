@@ -5,10 +5,6 @@ from game.constants import *
 
 pygame.init()
 
-WIDTH, HEIGHT = 800, 600
-FPS = 60
-HIT_BOX_SIDE = 32
-
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
@@ -34,6 +30,11 @@ gm_rect = gm.get_rect()
 
 gm_x = (WIDTH - gm.get_width()) // 2
 gm_y = (HEIGHT - gm.get_height()) // 2
+
+win_text_font = pygame.font.Font(None, 74)
+
+text = font.render("Привіт, Pygame!", True, (10, 10, 10))
+
 
 class UI:
     def __init__(self):
@@ -266,7 +267,7 @@ win = False
 
 bonus_timer = 180
 while play:
-    print(win)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             play = False
